@@ -1,0 +1,761 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>RAG Evaluation Results</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                line-height: 1.6;
+            }
+            .summary-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .summary-box {
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 15px;
+                width: 18%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .summary-box h3 {
+                margin-top: 0;
+                color: #333;
+            }
+            .summary-box .score {
+                font-size: 24px;
+                font-weight: bold;
+                color: #2c7be5;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                font-size: 12px;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .score-1 {
+                background-color: #d4edda;
+                color: #155724;
+            }
+            .score-0 {
+                background-color: #f8d7da;
+                color: #721c24;
+            }
+            .score-nan {
+                background-color: #e9ecef;
+                color: #6c757d;
+            }
+            .long-text {
+                max-width: 300px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .long-text:hover {
+                white-space: normal;
+                overflow: visible;
+                background-color: #f8f9fa;
+                position: relative;
+                z-index: 100;
+            }
+            .tooltip {
+              position: relative;
+              display: inline-block;
+              cursor: pointer;
+            }
+            .tooltip .tooltiptext {
+              visibility: hidden;
+              width: 500px;
+              background-color: #f8f9fa;
+              color: #333;
+              text-align: left;
+              border-radius: 6px;
+              border: 1px solid #ddd;
+              padding: 10px;
+              position: absolute;
+              z-index: 1;
+              bottom: 125%;
+              left: 50%;
+              margin-left: -250px;
+              opacity: 0;
+              transition: opacity 0.3s;
+              white-space: pre-wrap;
+              overflow-y: auto;
+              max-height: 300px;
+            }
+            .tooltip:hover .tooltiptext {
+              visibility: visible;
+              opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>RAG Evaluation Results</h1>
+        <p>Generated on: 2025-04-09 13:14:03</p>
+        
+        <div class="summary-container">
+    
+            <div class="summary-box">
+                <h3>Context Precision</h3>
+                <div class="score">0.56</div>
+            </div>
+        
+            <div class="summary-box">
+                <h3>Answer Relevancy</h3>
+                <div class="score">0.49</div>
+            </div>
+        
+            <div class="summary-box">
+                <h3>Faithfulness</h3>
+                <div class="score">0.40</div>
+            </div>
+        
+            <div class="summary-box">
+                <h3>Context Recall</h3>
+                <div class="score">0.47</div>
+            </div>
+        
+            <div class="summary-box">
+                <h3>Context Entities Recall</h3>
+                <div class="score">0.58</div>
+            </div>
+        
+            <div class="summary-box">
+                <h3>Accuracy</h3>
+                <div class="score">0.47</div>
+            </div>
+        
+            <div class="summary-box">
+                <h3>Completeness</h3>
+                <div class="score">0.55</div>
+            </div>
+        
+            <div class="summary-box">
+                <h3>Relevance</h3>
+                <div class="score">0.46</div>
+            </div>
+        
+            <div class="summary-box">
+                <h3>Overall</h3>
+                <div class="score">0.50</div>
+            </div>
+        </div>
+        
+        <h2>Detailed Results</h2>
+        <table>
+            <tr>
+                <th>Batch</th>
+                <th>Index</th>
+    <th>User Input</th>
+<th>Retrieved Contexts</th>
+<th>Response</th>
+<th>Reference</th>
+<th>Context Precision</th>
+<th>Answer Relevancy</th>
+<th>Faithfulness</th>
+<th>Context Recall</th>
+<th>Context Entities Recall</th>
+<th>Accuracy</th>
+<th>Completeness</th>
+<th>Relevance</th>
+<th>Total</th>
+</tr>
+
+            <tr>
+                <td>1</td>
+                <td>0</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">What are the global implications of the USA Suprem...</span>
+                        <span class="tooltiptext">What are the global implications of the USA Supreme Court ruling on abortion?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">The global implications of the USA Supreme Court r...</span>
+                        <span class="tooltiptext">The global implications of the USA Supreme Court ruling on abortion can be significant, as it sets a precedent for other countries and influences the global discourse on reproductive rights. Here are some potential implications:
+
+1. Influence on other countries: The Supreme Court's ruling can serve as a reference point for other countries grappling with their own abortion laws. It can provide legal arguments and reasoning that advocates for reproductive rights can use to challenge restrictive abortion laws in their respective jurisdictions.
+
+2. Strengthening of global reproductive rights movements: A favorable ruling by the Supreme Court can energize and empower reproductive rights movements worldwide. It can serve as a rallying point for activists and organizations advocating for women's rights, leading to increased mobilization and advocacy efforts globally.
+
+3. Counteracting anti-abortion movements: Conversely, a ruling that restricts abortion rights can embolden anti-abortion movements globally. It can provide legitimacy to their arguments and encourage similar restrictive measures in other countries, potentially leading to a rollback of existing reproductive rights.
+
+4. Impact on international aid and policies: The Supreme Court's ruling can influence international aid and policies related to reproductive health. It can shape the priorities and funding decisions of donor countries and organizations, potentially leading to increased support for reproductive rights initiatives or conversely, restrictions on funding for abortion-related services.
+
+5. Shaping international human rights standards: The ruling can contribute to the development of international human rights standards regarding reproductive rights. It can influence the interpretation and application of existing human rights treaties and conventions, potentially strengthening the recognition of reproductive rights as fundamental human rights globally.
+
+6. Global health implications: The Supreme Court's ruling can have implications for global health outcomes, particularly in countries with restrictive abortion laws. It can impact the availability and accessibility of safe and legal abortion services, potentially leading to an increase in unsafe abortions and related health complications.
+
+It is important to note that the specific implications will depend on the nature of the Supreme Court ruling and the subsequent actions taken by governments, activists, and organizations both within and outside the United States.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The global implications of the USA Supreme Court r...</span>
+                        <span class="tooltiptext">The global implications of the USA Supreme Court ruling on abortion are significant. The ruling has led to limited or no access to abortion for one in three women and girls of reproductive age in states where abortion access is restricted. These states also have weaker maternal health support, higher maternal death rates, and higher child poverty rates. Additionally, the ruling has had an impact beyond national borders due to the USA's geopolitical and cultural influence globally. Organizations and activists worldwide are concerned that the ruling may inspire anti-abortion legislative and policy attacks in other countries. The ruling has also hindered progressive law reform and the implementation of abortion guidelines in certain African countries. Furthermore, the ruling has created a chilling effect in international policy spaces, empowering anti-abortion actors to undermine human rights protections.</span>
+                    </td>
+                    <td class="">0.56</td><td class="">0.89</td><td class="">0.04</td><td class="">0.04</td><td class="">0.74</td><td class="">0.72</td><td class="">0.28</td><td class="">0.20</td><td>1.20</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>1</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">Which companies are the main contributors to GHG e...</span>
+                        <span class="tooltiptext">Which companies are the main contributors to GHG emissions and their role in global warming according to the Carbon Majors database?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">According to the Carbon Majors database, the main ...</span>
+                        <span class="tooltiptext">According to the Carbon Majors database, the main contributors to greenhouse gas (GHG) emissions and their role in global warming are primarily fossil fuel companies. These companies extract, produce, and sell fossil fuels, which when burned release carbon dioxide (CO2) and other GHGs into the atmosphere. The top contributors include:
+
+1. Saudi Arabian Oil Company (Saudi Aramco): As the world's largest oil producer, Saudi Aramco is responsible for a significant portion of global GHG emissions. It is estimated to have contributed around 59.26 gigatons of CO2 equivalent (GtCO2e) between 1965 and 2017.
+
+2. Chevron Corporation: Chevron is one of the largest oil and gas companies globally and has contributed approximately 43.35 GtCO2e between 1965 and 2017.
+
+3. ExxonMobil Corporation: ExxonMobil is another major oil and gas company and has contributed around 41.90 GtCO2e between 1965 and 2017.
+
+4. BP plc: BP is a multinational oil and gas company and has contributed approximately 34.02 GtCO2e between 1965 and 2017.
+
+5. Royal Dutch Shell plc: Shell is one of the largest oil and gas companies globally and has contributed around 31.95 GtCO2e between 1965 and 2017.
+
+6. TotalEnergies SE: TotalEnergies is a French multinational oil and gas company and has contributed approximately 31.91 GtCO2e between 1965 and 2017.
+
+7. ConocoPhillips Company: ConocoPhillips is an American multinational energy corporation and has contributed around 20.67 GtCO2e between 1965 and 2017.
+
+8. PetroChina Company Limited: PetroChina is the largest oil and gas producer in China and has contributed approximately 17.26 GtCO2e between 1965 and 2017.
+
+9. Peabody Energy Corporation: Peabody Energy is the largest private-sector coal company globally and has contributed around 15.39 GtCO2e between 1965 and 2017.
+
+10. Glencore plc: Glencore is a multinational commodity trading and mining company and has contributed approximately 15.11 GtCO2e between 1965 and 2017.
+
+These companies, along with others in the fossil</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">According to the Carbon Majors database, the main ...</span>
+                        <span class="tooltiptext">According to the Carbon Majors database, the main contributors to GHG emissions and their role in global warming are fossil fuel companies. These companies, both state-owned and private, have produced almost a trillion tons of GHG emissions in 150 years. The database shows that 100 existing fossil fuel companies, along with eight that no longer exist, are responsible for 71% of all GHG emissions since 1988. In the Americas, the private companies that have contributed the most emissions are ExxonMobil, Chevron, and Peabody, all from the United States. Among state-owned companies in the Americas, the largest emitter is Mexican company Pemex, followed by Venezuelan company Petróleos de Venezuela, S.A. It is important to note that while people with fewer resources, particularly from countries in the global South, do not significantly contribute to climate change, they are the ones most affected by its impacts. Approximately half of the global population lives in areas that are "very vulnerable" to climate change, and it is people with limited development opportunities who face the greatest risks. This unequal impact disproportionately affects the human rights of those with fewer resources and greater vulnerability in the context of climate change in the global South. Additionally, between 2010 and 2020, human mortality due to climate disasters was 15 times higher in vulnerable regions and populations.</span>
+                    </td>
+                    <td class="">0.46</td><td class="">0.64</td><td class="">0.60</td><td class="">0.29</td><td class="">0.66</td><td class="">0.18</td><td class="">0.99</td><td class="">0.44</td><td>1.61</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>2</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">Which private companies in the Americas are the la...</span>
+                        <span class="tooltiptext">Which private companies in the Americas are the largest GHG emitters according to the Carbon Majors database?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">According to the Carbon Majors database, the large...</span>
+                        <span class="tooltiptext">According to the Carbon Majors database, the largest private companies in the Americas that are the largest GHG emitters are:
+
+1. Chevron Corporation (United States)
+2. ExxonMobil Corporation (United States)
+3. ConocoPhillips Company (United States)
+4. BP plc (United Kingdom, but with significant operations in the Americas)
+5. Royal Dutch Shell plc (Netherlands, but with significant operations in the Americas)
+6. Peabody Energy Corporation (United States)
+7. Duke Energy Corporation (United States)
+8. TotalEnergies SE (France, but with significant operations in the Americas)
+9. BHP Group Limited (Australia, but with significant operations in the Americas)
+10. Rio Tinto Group (United Kingdom/Australia, but with significant operations in the Americas)
+
+Please note that the rankings may change over time as new data becomes available.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The largest private companies in the Americas that...</span>
+                        <span class="tooltiptext">The largest private companies in the Americas that are the largest GHG emitters according to the Carbon Majors database are ExxonMobil, Chevron, and Peabody.</span>
+                    </td>
+                    <td class="">0.15</td><td class="">0.24</td><td class="">0.10</td><td class="">0.47</td><td class="">0.12</td><td class="">0.46</td><td class="">0.87</td><td class="">0.81</td><td>2.14</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>3</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">What action did Amnesty International urge its sup...</span>
+                        <span class="tooltiptext">What action did Amnesty International urge its supporters to take in response to the killing of the Ogoni 9?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">Amnesty International urged its supporters to writ...</span>
+                        <span class="tooltiptext">Amnesty International urged its supporters to write letters to the Nigerian government, calling for an independent investigation into the killings of the Ogoni 9 and for those responsible to be brought to justice. They also called for an end to the human rights abuses in the Niger Delta region and for the protection of the rights of the Ogoni people.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">Amnesty International urged its supporters to send...</span>
+                        <span class="tooltiptext">Amnesty International urged its supporters to send appeals for the defenders' freedom to Nigerian authorities and later to send letters of outrage.</span>
+                    </td>
+                    <td class="">0.86</td><td class="">0.62</td><td class="">0.74</td><td class="">0.17</td><td class="">0.70</td><td class="">0.51</td><td class="">0.19</td><td class="">0.19</td><td>0.89</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>4</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">What are the recommendations made by Amnesty Inter...</span>
+                        <span class="tooltiptext">What are the recommendations made by Amnesty International to the Special Rapporteur on Human Rights Defenders?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">Amnesty International made several recommendations...</span>
+                        <span class="tooltiptext">Amnesty International made several recommendations to the Special Rapporteur on Human Rights Defenders. These recommendations include:
+
+1. Urging states to fully implement the UN Declaration on Human Rights Defenders and ensure that national laws and policies are in line with international human rights standards.
+
+2. Calling on states to create a safe and enabling environment for human rights defenders, including by adopting legislation that protects defenders from threats, attacks, and reprisals.
+
+3. Encouraging states to establish effective mechanisms for the protection of human rights defenders, such as national human rights institutions and specialized units within law enforcement agencies.
+
+4. Urging states to investigate and hold accountable those responsible for attacks and threats against human rights defenders, ensuring that they are brought to justice in fair trials.
+
+5. Calling on states to repeal or amend laws that are used to criminalize or restrict the work of human rights defenders, including laws on defamation, sedition, and counter-terrorism.
+
+6. Encouraging states to provide adequate resources and support to human rights defenders, including funding for their work, access to legal assistance, and psychosocial support.
+
+7. Urging states to consult and engage with human rights defenders in the development and implementation of laws, policies, and programs that affect their rights and work.
+
+8. Calling on states to ensure that human rights defenders are able to access and share information freely, including through the internet and other digital platforms.
+
+9. Encouraging states to protect the rights of specific groups of human rights defenders who face particular risks and challenges, such as women defenders, indigenous defenders, and defenders working on issues related to sexual orientation and gender identity.
+
+10. Urging states to cooperate with the Special Rapporteur and other UN mechanisms in the promotion and protection of human rights defenders, including by responding to communications and requests for visits.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The recommendations made by Amnesty International ...</span>
+                        <span class="tooltiptext">The recommendations made by Amnesty International to the Special Rapporteur on Human Rights Defenders include embedding a focus on child and young HRDs in future work, raising awareness about the differences and challenges they face, incorporating age disaggregated data in reports, and creating safe spaces for engagement.</span>
+                    </td>
+                    <td class="">0.73</td><td class="">0.17</td><td class="">0.47</td><td class="">0.12</td><td class="">0.85</td><td class="">0.68</td><td class="">0.93</td><td class="">0.13</td><td>1.74</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>5</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">Who are the target audience of the two books creat...</span>
+                        <span class="tooltiptext">Who are the target audience of the two books created by Amnesty International on child rights?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">The target audience of the two books created by Am...</span>
+                        <span class="tooltiptext">The target audience of the two books created by Amnesty International on child rights are likely children and young adults.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The target audience of the two books created by Am...</span>
+                        <span class="tooltiptext">The target audience of the two books created by Amnesty International on child rights are children and young people.</span>
+                    </td>
+                    <td class="">0.18</td><td class="">0.83</td><td class="">0.33</td><td class="">0.72</td><td class="">0.20</td><td class="">0.23</td><td class="">0.89</td><td class="">0.31</td><td>1.43</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>6</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">Which right guarantees access to comprehensive inf...</span>
+                        <span class="tooltiptext">Which right guarantees access to comprehensive information about past human rights violations, including the identities of the perpetrators and the fate of the victims, as well as the circumstances surrounding the violations?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">The right that guarantees access to comprehensive ...</span>
+                        <span class="tooltiptext">The right that guarantees access to comprehensive information about past human rights violations, including the identities of the perpetrators and the fate of the victims, as well as the circumstances surrounding the violations, is the right to truth.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The right that guarantees access to comprehensive ...</span>
+                        <span class="tooltiptext">The right that guarantees access to comprehensive information about past human rights violations, including the identities of the perpetrators and the fate of the victims, as well as the circumstances surrounding the violations, is the right to know the truth.</span>
+                    </td>
+                    <td class="">0.81</td><td class="">0.22</td><td class="">0.86</td><td class="">0.20</td><td class="">0.86</td><td class="">0.57</td><td class="">0.68</td><td class="">0.32</td><td>1.57</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>7</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">Who has the right to be fully informed about human...</span>
+                        <span class="tooltiptext">Who has the right to be fully informed about human rights violations, including the identities of the perpetrators and the fate of the victims?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">Everyone has the right to be fully informed about ...</span>
+                        <span class="tooltiptext">Everyone has the right to be fully informed about human rights violations, including the identities of the perpetrators and the fate of the victims. This right is recognized by various international human rights instruments, such as the Universal Declaration of Human Rights and the International Covenp.nant on Civil and Political Rights.
+
+The victims of human rights violations and their families have a particular right to know the truth about what happened to them. This includes knowing the identities of the perpetrators and the fate of the victims, such as whether they are alive or dead, and if dead, the circumstances of their death.
+
+Furthermore, society as a whole has a right to be informed about human rights violations. This is essential for holding perpetrators accountable, preventing future abuses, and ensuring justice and reparations for the victims. Access to information about human rights violations also allows for public scrutiny and debate, which are crucial for building a culture of human rights and promoting transparency and accountability.
+
+Journalists, human rights defenders, and civil society organizations play a vital role in investigating and reporting on human rights violations. They have the right to access information, conduct independent investigations, and disseminate their findings to the public. Governments have a responsibility to protect and facilitate these activities, ensuring that individuals and organizations can operate freely and without fear of reprisals.
+
+In summary, the right to be fully informed about human rights violations, including the identities of the perpetrators and the fate of the victims, belongs to everyone. It is a fundamental aspect of promoting human rights, accountability, and justice.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The victims of gross human rights violations and t...</span>
+                        <span class="tooltiptext">The victims of gross human rights violations and their families, as well as members of society generally, have the right to be fully informed about human rights violations, including the identities of the perpetrators and the fate of the victims.</span>
+                    </td>
+                    <td class="">0.91</td><td class="">0.01</td><td class="">0.09</td><td class="">0.25</td><td class="">0.74</td><td class="">0.23</td><td class="">0.70</td><td class="">0.38</td><td>1.31</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>8</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">When can individuals be found guilty under Article...</span>
+                        <span class="tooltiptext">When can individuals be found guilty under Article 207.3 of the Russian Criminal Code?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">Under Article 207.3 of the Russian Criminal Code, ...</span>
+                        <span class="tooltiptext">Under Article 207.3 of the Russian Criminal Code, individuals can be found guilty if they participate in an organized group or commit repeated acts of smuggling of cultural heritage items.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">Individuals can be found guilty under Article 207....</span>
+                        <span class="tooltiptext">Individuals can be found guilty under Article 207.3 of the Russian Criminal Code if their statements are contrary to the official position of the Russian authorities.</span>
+                    </td>
+                    <td class="">0.77</td><td class="">0.52</td><td class="">0.94</td><td class="">0.01</td><td class="">0.69</td><td class="">0.86</td><td class="">0.90</td><td class="">0.71</td><td>2.47</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>9</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">When does the prosecution consider statements cont...</span>
+                        <span class="tooltiptext">When does the prosecution consider statements contrary to the official position as 'false' under Article 207.3?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">Under Article 207.3 of the Russian Criminal Code, ...</span>
+                        <span class="tooltiptext">Under Article 207.3 of the Russian Criminal Code, statements contrary to the official position are considered 'false' by the prosecution when they are intentionally made with the aim of discrediting the state or its authorities, or spreading false information that could potentially harm the public interest or cause significant damage. The prosecution will consider such statements as false if they are deliberately made to mislead the public or undermine the credibility of the state.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The prosecution considers statements contrary to t...</span>
+                        <span class="tooltiptext">The prosecution considers statements contrary to the official position as 'false' under Article 207.3 when they are in opposition to the official position of the Russian authorities.</span>
+                    </td>
+                    <td class="">0.93</td><td class="">0.31</td><td class="">0.14</td><td class="">0.05</td><td class="">0.39</td><td class="">0.32</td><td class="">0.84</td><td class="">0.42</td><td>1.58</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>10</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">What factors have contributed to the decline of in...</span>
+                        <span class="tooltiptext">What factors have contributed to the decline of independent civil society organizations in Nicaragua?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">There are several factors that have contributed to...</span>
+                        <span class="tooltiptext">There are several factors that have contributed to the decline of independent civil society organizations in Nicaragua:
+
+1. Repressive government policies: The Nicaraguan government, under President Daniel Ortega, has implemented a series of repressive policies that have targeted civil society organizations. These policies include restrictive laws, such as the Foreign Agents Law, which requires organizations receiving foreign funding to register as "foreign agents" and submit detailed finp.nancial reports. This has created a climate of fear and uncertainty for many organizations, leading to self-censorship and a decline in their activities.
+
+2. Harassment and intimidation: Civil society organizations in Nicaragua have faced harassment and intimidation from government authorities, including surveillance, arbitrary arrests, and physical attacks. Human rights defenders and activists have been particularly targeted, with many facing threats to their personal safety and the safety of their families. This has made it difficult for organizations to operate freely and has deterred many individuals from getting involved in civil society work.
+
+3. Lack of funding: The repressive policies and climate of fear have also made it difficult for civil society organizations to secure funding. Many international donors have been reluctant to support organizations in Nicaragua due to concerns about the government's crackdown on civil society. This has led to a decline in resources available for organizations to carry out their work, including advocacy, research, and service provision.
+
+4. Legal restrictions: The Nicaraguan government has implemented a series of legal restrictions that have made it difficult for civil society organizations to operate. These include laws that limit freedom of association, freedom of expression, and the right to peaceful assembly. Organizations that are critical of the government or engage in activities deemed "political" have faced increased scrutiny and legal challenges, further limiting their ability to operate independently.
+
+5. Polarization and division: The political situation in Nicaragua has become increasingly polarized, with the government cracking down on dissent and opposition voices. This has created a climate of fear and mistrust, making it difficult for civil society organizations to collaborate and coordinate their efforts. The lack of unity and solidarity among civil society actors has weakened their collective impact and made it easier for the government to suppress their activities.
+
+Overall, the decline of independent civil society organizations in Nicaragua can be attributed to a combination of repressive government policies, harassment and intimidation, lack of funding, legal restrictions, and polarization. These factors have created a hostile environment for civil society, leading to a decline in their numbers and activities.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The factors that have contributed to the decline o...</span>
+                        <span class="tooltiptext">The factors that have contributed to the decline of independent civil society organizations in Nicaragua include arrests and harassment of human rights defenders, restrictive NGO laws, violent repression of protests, closure of civil society organizations and community centers, expropriation of belongings and premises, criminalization of social organizing and mobilization, restrictions on freedom of expression, implementation of repressive laws, constant threats of arrest and detention, restrictions on social media, and the imposition of silence through violence and repression.</span>
+                    </td>
+                    <td class="">0.71</td><td class="">0.47</td><td class="">0.08</td><td class="">0.55</td><td class="">0.94</td><td class="">0.70</td><td class="">0.15</td><td class="">0.28</td><td>1.13</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>11</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">What conditions designate wetlands as Ramsar sites...</span>
+                        <span class="tooltiptext">What conditions designate wetlands as Ramsar sites?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">Wetlands are designated as Ramsar sites based on t...</span>
+                        <span class="tooltiptext">Wetlands are designated as Ramsar sites based on the following conditions:
+
+1. The wetland must be of international importance, either ecologically, botanically, zoologically, or hydrologically.
+
+2. The wetland should support a significant number of rare, vulnerable, or endangered species of plants or animals.
+
+3. The wetland should be a habitat for migratory species.
+
+4. The wetland should have exceptional biodiversity or ecological processes.
+
+5. The wetland should provide important services to the local community, such as water purification, flood control, or groundwater recharge.
+
+6. The wetland should have cultural, scientific, educational, or recreational values.
+
+7. The wetland should be under threat from human activities or face potential degradation.
+
+8. The wetland should have effective management and conservation plans in place or the potential to develop them.
+
+These conditions are assessed by the Ramsar Convention on Wetlands, an international treaty aimed at conserving and sustainably using wetlands worldwide.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The conditions that designate wetlands as Ramsar s...</span>
+                        <span class="tooltiptext">The conditions that designate wetlands as Ramsar sites are when they fulfill the criteria for identifying wetlands of international importance, as established under the Convention on Wetlands.</span>
+                    </td>
+                    <td class="">0.04</td><td class="">0.49</td><td class="">0.25</td><td class="">0.82</td><td class="">0.52</td><td class="">0.13</td><td class="">0.27</td><td class="">0.48</td><td>0.88</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>12</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">Where was COP15 held in 2022?</span>
+                        <span class="tooltiptext">Where was COP15 held in 2022?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">COP15 was held in Kunming, China in 2022.</span>
+                        <span class="tooltiptext">COP15 was held in Kunming, China in 2022.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">COP15 was held in Montreal, Canada in 2022.</span>
+                        <span class="tooltiptext">COP15 was held in Montreal, Canada in 2022.</span>
+                    </td>
+                    <td class="score-1">1.00</td><td class="">0.66</td><td class="">0.65</td><td class="">0.59</td><td class="">0.66</td><td class="">0.53</td><td class="">0.92</td><td class="">0.45</td><td>1.90</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>13</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">What is the purpose of the agreement known as 30x3...</span>
+                        <span class="tooltiptext">What is the purpose of the agreement known as 30x30?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">The purpose of the agreement known as 30x30 is to ...</span>
+                        <span class="tooltiptext">The purpose of the agreement known as 30x30 is to conserve and protect 30% of the planet's land and oceans by the year 2030. This agreement aims to address the global biodiversity crisis and the impacts of climate change by preserving and restoring ecosystems, promoting sustainable land and ocean management practices, and safeguarding the habitats of numerous plant and animal species. The goal is to ensure the long-term health and resilience of the planet's natural resources and to support the well-being of both human and non-human communities.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The purpose of the agreement known as 30x30 is to ...</span>
+                        <span class="tooltiptext">The purpose of the agreement known as 30x30 is to designate 30% of the world's land and sea masses as protected areas for biodiversity conservation by 2030.</span>
+                    </td>
+                    <td class="">0.37</td><td class="">0.21</td><td class="">0.54</td><td class="">0.38</td><td class="">0.05</td><td class="">0.69</td><td class="">0.25</td><td class="">0.57</td><td>1.51</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>14</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">Who failed to explicitly recognize Indigenous Peop...</span>
+                        <span class="tooltiptext">Who failed to explicitly recognize Indigenous Peoples' lands and territories as a distinct category of protected area at COP15?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">At COP15, the United Nations Climate Change Confer...</span>
+                        <span class="tooltiptext">At COP15, the United Nations Climate Change Conference held in 2009 in Copenhagen, Denmark, the failure to explicitly recognize Indigenous Peoples' lands and territories as a distinct category of protected area was primarily attributed to the governments of several countries. These countries included Canada, Australia, New Zealand, and the United States. These governments were criticized for their reluctance to acknowledge the rights and land claims of Indigenous Peoples, which hindered the inclusion of Indigenous lands as protected areas in the conference's agreements.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The States failed to explicitly recognize Indigeno...</span>
+                        <span class="tooltiptext">The States failed to explicitly recognize Indigenous Peoples' lands and territories as a distinct category of protected area at COP15.</span>
+                    </td>
+                    <td class="">0.44</td><td class="">0.39</td><td class="">0.41</td><td class="">0.27</td><td class="">0.40</td><td class="">0.20</td><td class="">0.08</td><td class="">0.45</td><td>0.73</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>15</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">What are the consequences of criminalizing abortio...</span>
+                        <span class="tooltiptext">What are the consequences of criminalizing abortion for marginalized individuals?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">Criminalizing abortion can have severe consequence...</span>
+                        <span class="tooltiptext">Criminalizing abortion can have severe consequences for marginalized individuals, particularly those who are already facing various forms of discrimination and inequality. Some of the consequences include:
+
+1. Health risks: When abortion is criminalized, individuals may resort to unsafe and illegal methods to terminate their pregnp.nancies, leading to serious health complications and even death. Marginalized individuals, who often have limited access to healthcare and resources, are more likely to be affected by these risks.
+
+2. Economic burden: Marginalized individuals, who are more likely to face finp.nancial constraints, may struggle to afford safe and legal abortions in countries where it is criminalized. This can lead to increased finp.nancial burdens, as they may have to travel long distances or seek expensive underground services.
+
+3. Limited reproductive choices: Criminalizing abortion restricts individuals' reproductive choices and autonomy. Marginalized individuals, who already face various barriers to accessing healthcare and education, may be further limited in their ability to make informed decisions about their reproductive health.
+
+4. Increased inequality: Criminalizing abortion disproportionately affects marginalized individuals, exacerbating existing inequalities. Women from low-income backgrounds, racial and ethnic minorities, LGBTQ+ individuals, and those living in rural areas often face additional barriers to accessing safe and legal abortion services, further widening the gap between privileged and marginalized groups.
+
+5. Criminalization of pregnp.nancy: In some cases, criminalizing abortion can lead to the criminalization of pregnp.nancy itself. This can result in the surveillance and punishment of pregnp.nant individuals, particularly those from marginalized communities, who may be subjected to invasive monitoring, discrimination, and even imprisonment for actions perceived as harmful to the fetus.
+
+6. Mental health impact: The criminalization of abortion can have significant psychological consequences for marginalized individuals. The stigma and shame associated with seeking illegal abortions or being unable to access safe services can lead to increased stress, anxiety, and depression.
+
+7. Reproductive injustice: Criminalizing abortion perpetuates reproductive injustice by denying marginalized individuals the right to control their own bodies and make decisions about their reproductive health. It reinforces systemic inequalities and denies them the same reproductive rights and freedoms enjoyed by more privileged individuals.
+
+It is important to note that these consequences are not limited to criminalizing abortion alone but are often intertwined with broader social, economic, and healthcare disparities faced by marginalized communities.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The consequences of criminalizing abortion for mar...</span>
+                        <span class="tooltiptext">The consequences of criminalizing abortion for marginalized individuals include increased stigma, lack of information, and disinformation. This can have severe and irreversible effects on these individuals. Girls and young women may be forced to carry pregnp.nancies resulting from sexual violence due to a lack of knowledge about their rights. Marginalized individuals, such as those living in poverty, historically discriminated against, Indigenous and Afro-descendent women, migrants, and refugees, are disproportionately affected by abortion criminalization. The criminalization of abortion is a major factor contributing to the high number of unsafe abortions, which leads to increased maternal mortality and morbidity. Access to health services is undermined, resulting in preventable maternal deaths and complications. Marginalized individuals are forced to resort to unsafe clandestine abortion methods, putting their lives and health at risk. In Nigeria, restrictive abortion laws make it difficult to access safe abortion care.</span>
+                    </td>
+                    <td class="">0.89</td><td class="">0.68</td><td class="">0.16</td><td class="">0.95</td><td class="">0.35</td><td class="">0.90</td><td class="">0.10</td><td class="">0.80</td><td>1.80</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>16</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">What responsibilities should social media companie...</span>
+                        <span class="tooltiptext">What responsibilities should social media companies have in relation to ensuring access to accurate sexual and reproductive health information?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">Social media companies have a responsibility to en...</span>
+                        <span class="tooltiptext">Social media companies have a responsibility to ensure access to accurate sexual and reproductive health information. Here are some key responsibilities they should have:
+
+1. Promote accurate information: Social media platforms should actively promote and prioritize accurate sexual and reproductive health information over misinformation or harmful content. This can be done by using algorithms to identify and reduce the visibility of false or misleading information.
+
+2. Fact-checking and verification: Social media companies should invest in fact-checking mechanisms to verify the accuracy of sexual and reproductive health information shared on their platforms. They should work with experts and organizations specializing in sexual and reproductive health to ensure the information is reliable and evidence-based.
+
+3. Transparency and disclosure: Social media companies should be transparent about their content moderation policies and algorithms. They should disclose how they handle sexual and reproductive health information and what measures they take to ensure accuracy. This transparency will help users understand the reliability of the information they encounter.
+
+4. Collaborate with experts and organizations: Social media companies should collaborate with reputable experts, organizations, and health authorities to develop guidelines and standards for accurate sexual and reproductive health information. They should seek input from these stakeholders to ensure that their policies and practices align with the latest scientific evidence and best practices.
+
+5. User education and awareness: Social media companies should invest in user education and awareness campaigns to help users identify accurate sexual and reproductive health information. This can include providing tips on how to evaluate the credibility of sources, recognizing misinformation, and understanding the importance of evidence-based information.
+
+6. Reporting and addressing misinformation: Social media platforms should have clear and accessible mechanisms for users to report misinformation related to sexual and reproductive health. They should promptly investigate and take appropriate action against accounts or content that spread false or harmful information.
+
+7. Accessibility and inclusivity: Social media companies should ensure that accurate sexual and reproductive health information is accessible to all users, including those with disabilities or from marginalized communities. They should consider the needs of diverse populations and provide information in multiple languages and formats.
+
+8. Continuous improvement: Social media companies should regularly evaluate and improve their policies, algorithms, and practices related to sexual and reproductive health information. They should stay updated with the latest research and feedback from users and experts to adapt their approaches and address emerging challenges.
+
+By fulfilling these responsibilities, social media companies can play a crucial role in promoting accurate sexual and reproductive health information and empowering users to make informed decisions about their health.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">Social media companies should have the responsibil...</span>
+                        <span class="tooltiptext">Social media companies should have the responsibility to invest in human oversight of their content moderation systems to ensure equal access to accurate sexual and reproductive health information. They should also engage in human rights due diligence to address risks and abuses related to their business model.</span>
+                    </td>
+                    <td class="">0.15</td><td class="">0.17</td><td class="">0.20</td><td class="">0.95</td><td class="">0.69</td><td class="">0.16</td><td class="">0.56</td><td class="">0.19</td><td>0.91</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>17</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">What role do social media companies play in protec...</span>
+                        <span class="tooltiptext">What role do social media companies play in protecting users' rights online, regardless of their language and political views?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">Social media companies play a crucial role in prot...</span>
+                        <span class="tooltiptext">Social media companies play a crucial role in protecting users' rights online, regardless of their language and political views. Here are some key aspects of their role:
+
+1. Content moderation: Social media companies have the responsibility to moderate and remove content that violates their community guidelines, including hate speech, harassment, and misinformation. This helps protect users from harmful and abusive content, ensuring a safer online environment.
+
+2. Privacy and data protection: Companies must safeguard users' personal information and ensure their privacy rights are respected. This involves implementing robust data protection measures, obtaining user consent for data collection and usage, and providing transparent privacy policies.
+
+3. Algorithmic transparency: Social media platforms use algorithms to curate and personalize content for users. Ensuring transparency in these algorithms is crucial to prevent bias, discrimination, and the manipulation of information. Companies should disclose how algorithms work and take steps to address any unintended consequences.
+
+4. Accessibility and inclusivity: Social media companies should strive to make their platforms accessible to users of all languages and abilities. This includes providing language options, captioning for videos, and features that accommodate users with disabilities, ensuring equal access to information and participation.
+
+5. Fighting disinformation: Companies should actively combat the spread of disinformation and fake news on their platforms. This involves implementing fact-checking mechanisms, partnering with credible sources, and promoting media literacy to help users distinguish between reliable and misleading information.
+
+6. Transparency and accountability: Social media companies should be transparent about their policies, practices, and decision-making processes. They should provide clear avenues for users to report issues, appeal content removals, and seek redress. Regular transparency reports can help build trust and hold companies accountable.
+
+7. Collaboration with external stakeholders: Companies should collaborate with governments, civil society organizations, and experts to develop policies and practices that protect users' rights. Engaging in multi-stakeholder dialogues helps ensure diverse perspectives are considered and fosters a collective effort to address online challenges.
+
+Overall, social media companies have a responsibility to create a safe, inclusive, and rights-respecting online environment for all users, regardless of their language and political views.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">Social media companies play a role in protecting u...</span>
+                        <span class="tooltiptext">Social media companies play a role in protecting users' rights online, regardless of their language and political views, by investing in human oversight of content moderation systems, engaging in human rights due diligence, and educating users about security and privacy features.</span>
+                    </td>
+                    <td class="">0.50</td><td class="">0.54</td><td class="">0.55</td><td class="">0.95</td><td class="">0.27</td><td class="">0.75</td><td class="">0.31</td><td class="">0.60</td><td>1.66</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>18</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">What labor abuses were documented by Amnesty Inter...</span>
+                        <span class="tooltiptext">What labor abuses were documented by Amnesty International in Qatar and how do they relate to the kafala system?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">Amnesty International has documented several labor...</span>
+                        <span class="tooltiptext">Amnesty International has documented several labor abuses in Qatar, particularly in relation to the kafala system. The kafala system is a sponsorship-based employment system that ties migrant workers to their employers, giving employers significant control over their workers' lives and rights. Here are some of the labor abuses documented:
+
+1. Exploitative working conditions: Migrant workers in Qatar often face long working hours, with some working up to 12 hours a day, six or seven days a week. They are also subjected to dangerous and hazardous working conditions, especially in the construction sector.
+
+2. Withheld wages: Many workers have reported that their employers withhold their wages for months, sometimes even years. This practice leaves workers in a vulnerable position, unable to leave their jobs or seek alternative employment.
+
+3. Passport confiscation: Employers often confiscate the passports of migrant workers, depriving them of their freedom of movement and making it difficult for them to leave the country or change jobs. This practice is a clear violation of workers' rights and leaves them trapped in exploitative situations.
+
+4. Forced labor and human trafficking: Amnesty International has documented cases of forced labor and human trafficking in Qatar. Some workers are deceived about the nature of their work or are forced to work against their will, often in conditions akin to modern-day slavery.
+
+5. Inadequate living conditions: Migrant workers in Qatar often live in overcrowded and unsanitary accommodation provided by their employers. These living conditions are substandard and do not meet basic human rights standards.
+
+These labor abuses are directly linked to the kafala system, which gives employers excessive power and control over migrant workers. The system ties workers to their employers, making it difficult for them to assert their rights or seek redress for abuses. The kafala system creates a power imbalance that enables employers to exploit workers, leading to the documented labor abuses in Qatar.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">Amnesty International documented labor abuses in Q...</span>
+                        <span class="tooltiptext">Amnesty International documented labor abuses in Qatar, including workers being permitted only one day off each month, threats of salary cuts for taking more rest time, failure to provide pay slips, and overcrowded and dirty living conditions. These labor abuses relate to the kafala system because the kafala system imposes tight restrictions on migrant workers' freedom of movement and ability to change jobs without their employer's permission. This system allows abusive employers to control their workforce by canceling residence permits, falsely reporting employees as absconding, and using non-compete clauses to prevent workers from changing jobs.</span>
+                    </td>
+                    <td class="">0.73</td><td class="">0.78</td><td class="">0.01</td><td class="">0.62</td><td class="">0.77</td><td class="">0.05</td><td class="">0.92</td><td class="">0.94</td><td>1.91</td></tr>
+
+            <tr>
+                <td>1</td>
+                <td>19</td>
+        
+                    <td class="tooltip">
+                        <span class="long-text">When did the government of Qatar start repealing r...</span>
+                        <span class="tooltiptext">When did the government of Qatar start repealing restrictions on migrant workers?</span>
+                    </td>
+                    <td>-</td>
+                    <td class="tooltip">
+                        <span class="long-text">The government of Qatar started repealing restrict...</span>
+                        <span class="tooltiptext">The government of Qatar started repealing restrictions on migrant workers in 2017.</span>
+                    </td>
+                    
+                    <td class="tooltip">
+                        <span class="long-text">The government of Qatar started repealing restrict...</span>
+                        <span class="tooltiptext">The government of Qatar started repealing restrictions on migrant workers between 2018 and 2020.</span>
+                    </td>
+                    <td class="">0.07</td><td class="">0.94</td><td class="">0.81</td><td class="">0.91</td><td class="">0.96</td><td class="">0.62</td><td class="">0.13</td><td class="">0.61</td><td>1.36</td></tr>
+
+        </table>
+        
+        <script>
+        // 添加展开/收起长文本的功能
+        document.querySelectorAll('.long-text').forEach(element => {
+            element.addEventListener('click', function() {
+                this.classList.toggle('expanded');
+            });
+        });
+        </script>
+    </body>
+    </html>
+    
